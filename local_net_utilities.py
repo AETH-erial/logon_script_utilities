@@ -19,26 +19,21 @@ def get_default_gateway():
                 continue
             return ipaddress.IPv4Address(socket.inet_ntoa(struct.pack("<L", int(fields[2], 16))))
 
-def test_dns_resolution(*args):
+def test_dns_resolution(url: str, port: int) -> bool:
     """Method to test if DNS resolves or not.
     
     :rtype: bool
     :returns: True or False based on if DNS is resolving or not.
     """
-    for arg in args:
-        if arg == int:
-            default_port = arg
-        if arg == str:
-            dns_test_host = arg
     try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-        dns_test = socket.gethostbyname(str(dns_test_host))
+        host_ip = socket.gethostbyname(url)
     except socket.error as err:
         raise Exception(f'Exception raised when attempting DNS resolution {err}') from err
         sys.exit()
-    test = sock.connect((dns_test_host, default_port))
-    print(test)
+    sock.connect((host_ip, port))
+
     
     
-test_dns_resolution('www.google.com', 80)
+test_dns_resolution(url='www.google.com', port=80)
