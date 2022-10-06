@@ -26,3 +26,10 @@ with script_call.stdout:
     for line in script_call.stdout:
         sys.stdout.write(line)
         sys.stdout.flush()
+
+startx_call = subprocess.Popen(
+    ['startx'],
+    stdout=False,
+    stderr=False
+)
+startx_call.communicate()
