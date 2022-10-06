@@ -1,2 +1,3 @@
 venv
-venv
+##ignoring any temp_files
+temp_*
