@@ -1,2 +1,2 @@
-ipaddress >= 1.0.28
+ipaddress ~= 1.0.28
 
