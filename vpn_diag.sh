@@ -1,2 +1,2 @@
 #!/bin/sh
-nordvpn connect && nordvpn status && dnsleaktest.sh
+nordvpn connect ; nordvpn status ; dnsleaktest.sh
