@@ -44,3 +44,4 @@ for entry in session_logging:
     for key, val in entry.items():
         print(f"{ConsoleColors.UNDERLINE}{key}{ConsoleColors.ENDC} :: {ConsoleColors.OKGREEN}{val}{ConsoleColors.ENDC}")
         time.sleep(.5)
+input(f"{ConsoleColors.OKGREEN}Press Enter to continue...{ConsoleColors.ENDC}")
